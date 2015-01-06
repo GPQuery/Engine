@@ -1,9 +1,17 @@
 <?php
+
 // Race Details by raceId
 $app->get('/race/:raceId', function($raceId)  {
   $query = Race::find($raceId)->load('circuit', 'season');
   $query->results->load('driver', 'constructor', 'status');
   echo $query->toJson();
+});
+
+// Race Details, Random
+$app->get('/race', function() {
+  $query = Race::find(rand(1,256))->load('circuit', 'season');
+  $query->results->load('driver', 'constructor', 'status');
+  echo $query->toJson();  
 });
 
 // Races, All
