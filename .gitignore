@@ -4,6 +4,9 @@ vendor/
 # Database Configuration
 config/database.php
 
+# Poppy Module API
+poppy/
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

@@ -13,6 +13,7 @@ require 'config/database.php';
 
 // Bootstrap Eloquent ORM
 $capsule = new Capsule;
+//$capsule->addConnection($settings);
 $capsule->addConnection($settings);
 $capsule->setEventDispatcher(new Dispatcher(new Container));
 $capsule->bootEloquent();
